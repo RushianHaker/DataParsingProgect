@@ -17,6 +17,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+	implementation 'org.projectlombok:lombok:1.18.16'
+	implementation 'org.projectlombok:lombok:1.18.16'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
