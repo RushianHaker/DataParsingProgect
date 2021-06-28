@@ -13,16 +13,16 @@ public class Rub {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    public Long id;
 
     private String dateStart;
     private String dateEnd;
     private String date;
     private String name;
-    private int nominal;
-    private long count;
+    private Integer nominal;
+    private String count;
 
-    public Rub(Long id, String dateStart, String dateEnd, String date, String name, Integer nominal, Long count) {
+    public Rub(Long id, String dateStart, String dateEnd, String date, String name, Integer nominal, String count) {
         this.id = id;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
@@ -32,7 +32,7 @@ public class Rub {
         this.count = count;
     }
 
-    public Rub(Long id, String date, Integer nominal, Long count) {
+    public Rub(Long id, String date, Integer nominal, String count) {
         this.id = id;
         this.date = date;
         this.nominal = nominal;
@@ -90,11 +90,11 @@ public class Rub {
         this.nominal = nominal;
     }
 
-    public Long getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(Long count) {
+    public void setCount(String count) {
         this.count = count;
     }
 }
