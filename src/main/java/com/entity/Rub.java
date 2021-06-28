@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -11,15 +12,15 @@ import javax.persistence.Id;
 public class Rub {
 
     @Id
-    @GeneratedValue
-    public Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public long id;
 
     private String dateStart;
     private String dateEnd;
     private String date;
     private String name;
-    private Integer nominal;
-    private Long count;
+    private int nominal;
+    private long count;
 
     public Rub(Long id, String dateStart, String dateEnd, String date, String name, Integer nominal, Long count) {
         this.id = id;

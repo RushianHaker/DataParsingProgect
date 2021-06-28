@@ -12,12 +12,5 @@ public class ParsingProgectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ParsingProgectApplication.class, args);
-
-		RestTemplate restTemplate = new RestTemplate();
-		String fooResourceUrl
-				= "https://cbr.ru/scripts/XML_dynamic.asp?date_req1=02/03/2001&date_req2=14/03/2001&VAL_NM_RQ=R01235";
-		ResponseEntity<String> response
-				= restTemplate.getForEntity(fooResourceUrl + "/1", String.class);
-		System.out.println(response);
 	}
 }
