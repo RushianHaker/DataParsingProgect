@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.DTO.CourseDtoOnce;
 import com.entity.Cours;
 import com.services.CoursService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CoursParsingController {
     private CoursService coursService;
 
     @GetMapping(value = "/usd")
-    public List<Cours> getListUsdInformation() throws URISyntaxException {
-        return coursService.findAll();
+    public CourseDtoOnce getListUsdInformation() throws URISyntaxException {
+        return coursService.findUsd();
     }
 }

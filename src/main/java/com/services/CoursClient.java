@@ -15,19 +15,12 @@ import java.util.List;
 
 @Component
 public class CoursClient {
-    HttpClient httpClient = HttpClientBuilder.create().build();
-    ClientHttpRequestFactory executeFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
-    private RestTemplate restTemplate = new RestTemplate(executeFactory);
+    private RestTemplate restTemplate = new RestTemplate();
 
-    public List<CourseDtoOnce> getCourses() throws URISyntaxException {
-        String url = "https://www.cbr-xml-daily.ru/daily_json.js";
+    public CourseDtoOnce getCourses() {
+        String url = "http://localhost:8080/fake_usd_api.json";
 
-        try {
-            CourseDto response = restTemplate.getForObject(new URI(url), CourseDto.class);
-            return response.getUsd();
-
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        CourseDto response = restTemplate.getForObject(url, CourseDto.class);
+        return response.getValute().getUsd();
     }
 }

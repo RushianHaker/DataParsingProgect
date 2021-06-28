@@ -20,10 +20,8 @@ public class CoursService {
     @Autowired
     CoursClient coursClient;
 
-    public List<Cours> findAll() throws URISyntaxException {
-        return coursClient.getCourses().stream()
-                .map(this::toCours)
-                .collect(Collectors.toList());
+    public CourseDtoOnce findUsd() throws URISyntaxException {
+        return coursClient.getCourses();
     }
 
     private Cours toCours(@NonNull CourseDtoOnce input) {

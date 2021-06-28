@@ -1,14 +1,23 @@
 package com.DTO;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class CourseDtoOnce {
+import java.io.Serializable;
+
+public class CourseDtoOnce implements Serializable {
+    @JsonProperty("ID")
     private String id;
-    private int numCode;
+    @JsonProperty("NumCode")
+    private String numCode;
+    @JsonProperty("CharCode")
     private String charCode;
+    @JsonProperty("Nominal")
     private int nominal;
+    @JsonProperty("Name")
     private String name;
+    @JsonProperty("Value")
     private long value;
+    @JsonProperty("Previous")
     private long previous;
 
     public String getId() {
@@ -19,11 +28,11 @@ public class CourseDtoOnce {
         this.id = id;
     }
 
-    public int getNumCode() {
+    public String getNumCode() {
         return numCode;
     }
 
-    public void setNumCode(int numCode) {
+    public void setNumCode(String numCode) {
         this.numCode = numCode;
     }
 

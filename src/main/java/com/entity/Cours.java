@@ -13,7 +13,7 @@ public class Cours {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public String id;
-    private Integer numCode;
+    private String numCode;
     private String charCode;
     private String name;
     private Integer nominal;
@@ -22,7 +22,7 @@ public class Cours {
 
 
 
-    public Cours(String id, Integer numCode, String charCode, String name, Integer nominal, Long value, Long previous) {
+    public Cours(String id, String numCode, String charCode, String name, Integer nominal, Long value, Long previous) {
         this.id = id;
         this.numCode = numCode;
         this.charCode = charCode;
@@ -73,11 +73,11 @@ public class Cours {
         this.value = value;
     }
 
-    public Integer getNumCode() {
+    public String getNumCode() {
         return numCode;
     }
 
-    public void setNumCode(Integer numCode) {
+    public void setNumCode(String numCode) {
         this.numCode = numCode;
     }
 
