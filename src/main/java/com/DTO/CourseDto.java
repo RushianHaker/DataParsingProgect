@@ -1,6 +1,5 @@
 package com.DTO;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -19,18 +18,7 @@ public class CourseDto implements Serializable{
     @XmlElement(name = "Date")
     private Date date;
 
-    // TODO: Return value
     public List<CourseDtoOnce> getValute() { return valute; }
 
-//    public void setValute(CourseValuteDto valute) {
-//        this.valute = valute;
-//    }
-//
-//    public String getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(String date) {
-//        this.date = date;
-//    }
+    public Date getDate() { return date; }
 }

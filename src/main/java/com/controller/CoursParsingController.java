@@ -16,8 +16,8 @@ public class CoursParsingController {
     @Autowired
     private CoursService coursService;
 
-    @GetMapping(value = "/usd")
-    public List<CourseDtoOnce> getListUsdInformation() throws URISyntaxException, IOException, InterruptedException {
-        return coursService.findUsd();
+    @GetMapping(value = "/getCourse")
+    public List<CourseDtoOnce> getListInformation() throws URISyntaxException, IOException, InterruptedException {
+        return coursService.findCourseInfo();
     }
 }

@@ -1,6 +1,5 @@
 package com.DTO;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +18,7 @@ public class CourseDtoOnce implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @XmlElement(name="NumCode")
     private String numCode;
     @XmlElement(name="CharCode")
@@ -28,7 +28,7 @@ public class CourseDtoOnce implements Serializable {
     @XmlElement(name="Name")
     private String name;
     @XmlElement(name="Value")
-    private long value;
+    private double value;
 
 
     public String getNumCode() {
@@ -63,11 +63,11 @@ public class CourseDtoOnce implements Serializable {
         this.name = name;
     }
 
-    public long getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setValue(long value) {
+    public void setValue(double value) {
         this.value = value;
     }
 }

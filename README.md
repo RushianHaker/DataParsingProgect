@@ -3,11 +3,11 @@ Test parsing data from Json with RestTemplate
 
 # Парсинг данных
 ---
-> Запрос на получение курса доллара 
+> Запрос на получение курсов валют 
 
-GET: `/search`
+GET: `/getCourse`
 
-OUT:
+OUT: "пример одной валюты"
 ```json
 {
     "ID": "R01235",
