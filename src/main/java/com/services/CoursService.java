@@ -1,36 +1,25 @@
 package com.services;
 
 import com.DTO.CourseDtoOnce;
-import com.entity.Cours;
-import com.repository.CourseWebRepository;
-import lombok.NonNull;
+import com.repository.CourseEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
-public class CoursService {
+public class CoursService implements ICoursService{
 
     @Autowired
-    CourseWebRepository courseWebRepository;
+    CourseEntityRepository courseEntityRepository;
 
     @Autowired
     CoursClient coursClient;
 
-    public CourseDtoOnce findUsd() throws URISyntaxException {
-        return coursClient.getCourses();
-    }
-
-    private Cours toCours(@NonNull CourseDtoOnce input) {
-        return new Cours(input.getId(),
-                input.getNumCode(),
-                input.getCharCode(),
-                input.getName(),
-                input.getNominal(),
-                input.getValue(),
-                input.getPrevious());
+    public List<CourseDtoOnce> findUsd() throws URISyntaxException, IOException, InterruptedException {
+        List<CourseDtoOnce> saved = courseEntityRepository.saveAll(coursClient.getCourses());
+        return saved;
     }
 }

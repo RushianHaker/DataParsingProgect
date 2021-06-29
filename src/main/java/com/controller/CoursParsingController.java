@@ -1,13 +1,12 @@
 package com.controller;
 
 import com.DTO.CourseDtoOnce;
-import com.entity.Cours;
 import com.services.CoursService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class CoursParsingController {
     private CoursService coursService;
 
     @GetMapping(value = "/usd")
-    public CourseDtoOnce getListUsdInformation() throws URISyntaxException {
+    public List<CourseDtoOnce> getListUsdInformation() throws URISyntaxException, IOException, InterruptedException {
         return coursService.findUsd();
     }
 }

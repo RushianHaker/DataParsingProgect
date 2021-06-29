@@ -2,31 +2,34 @@ package com.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+@Entity
+@XmlRootElement(name = "Valute")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class CourseDtoOnce implements Serializable {
-    @JsonProperty("ID")
-    private String id;
-    @JsonProperty("NumCode")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @XmlElement(name="NumCode")
     private String numCode;
-    @JsonProperty("CharCode")
+    @XmlElement(name="CharCode")
     private String charCode;
-    @JsonProperty("Nominal")
+    @XmlElement(name="Nominal")
     private int nominal;
-    @JsonProperty("Name")
+    @XmlElement(name="Name")
     private String name;
-    @JsonProperty("Value")
+    @XmlElement(name="Value")
     private long value;
-    @JsonProperty("Previous")
-    private long previous;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNumCode() {
         return numCode;
@@ -66,13 +69,5 @@ public class CourseDtoOnce implements Serializable {
 
     public void setValue(long value) {
         this.value = value;
-    }
-
-    public long getPrevious() {
-        return previous;
-    }
-
-    public void setPrevious(long previous) {
-        this.previous = previous;
     }
 }
