@@ -5,10 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
 @Entity
@@ -28,7 +25,7 @@ public class CourseDtoOnce implements Serializable {
     @XmlElement(name="Name")
     private String name;
     @XmlElement(name="Value")
-    private double value;
+    private String Value;
 
 
     public String getNumCode() {
@@ -63,11 +60,11 @@ public class CourseDtoOnce implements Serializable {
         this.name = name;
     }
 
-    public double getValue() {
-        return value;
+    public String getValue() {
+        return Value;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setValue(String value) {
+        this.Value = value;
     }
 }
