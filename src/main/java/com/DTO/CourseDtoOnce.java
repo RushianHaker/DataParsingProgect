@@ -1,10 +1,9 @@
 package com.DTO;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
@@ -25,8 +24,11 @@ public class CourseDtoOnce implements Serializable {
     @XmlElement(name="Name")
     private String name;
     @XmlElement(name="Value")
-    private String Value;
+    @JsonIgnore
+    @Transient
+    private String _Value;
 
+    private double value;
 
     public String getNumCode() {
         return numCode;
@@ -60,11 +62,19 @@ public class CourseDtoOnce implements Serializable {
         this.name = name;
     }
 
-    public String getValue() {
-        return Value;
+    public String get_Value() {
+        return _Value;
     }
 
-    public void setValue(String value) {
-        this.Value = value;
+    public void set_Value(String _Value) {
+        this._Value = _Value;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
     }
 }

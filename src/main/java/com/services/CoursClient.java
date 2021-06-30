@@ -19,7 +19,9 @@ public class CoursClient {
         String url = "https://cbr.ru/scripts/XML_daily.asp?date_req=29/06/2021.xml";
 
         CourseDto response = restTemplate.getForObject(url, CourseDto.class);
-
+        response.getValute()
+                .stream()
+                .forEach((c)-> c.setValue(Double.parseDouble(c.get_Value().replace(",", "."))));
         return response.getValute();
     }
 }
