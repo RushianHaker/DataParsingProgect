@@ -1,7 +1,7 @@
 # DataParsingProgect
 Test parsing data with RestTemplate
 
-# Пример: Результат парсинга данных, если RestTemplate (utl) будет на JSON фалй
+# Пример: Результат парсинга данных, если RestTemplate (url) будет на JSON фалй
 ---
 > Запрос на получение курсов валют 
 
