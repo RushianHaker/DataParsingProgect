@@ -1,4 +1,4 @@
-package com.parsing.DTO;
+package com.parsing.dto;
 
 
 import javax.xml.bind.annotation.XmlAccessType;

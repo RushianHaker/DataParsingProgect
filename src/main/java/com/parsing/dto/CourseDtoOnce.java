@@ -1,8 +1,7 @@
-package com.parsing.DTO;
+package com.parsing.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;

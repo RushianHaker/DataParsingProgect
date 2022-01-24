@@ -1,6 +1,6 @@
-package com.parsing.services;
+package com.parsing.service;
 
-import com.parsing.DTO.CourseDtoOnce;
+import com.parsing.dto.CourseDtoOnce;
 import com.parsing.repository.CourseEntityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

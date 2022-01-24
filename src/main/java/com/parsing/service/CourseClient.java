@@ -1,8 +1,7 @@
-package com.parsing.services;
+package com.parsing.service;
 
-import com.parsing.DTO.CourseDto;
-import com.parsing.DTO.CourseDtoOnce;
-import lombok.RequiredArgsConstructor;
+import com.parsing.dto.CourseDto;
+import com.parsing.dto.CourseDtoOnce;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 

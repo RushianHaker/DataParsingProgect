@@ -1,6 +1,6 @@
 package com.parsing.repository;
 
-import com.parsing.DTO.CourseDtoOnce;
+import com.parsing.dto.CourseDtoOnce;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
