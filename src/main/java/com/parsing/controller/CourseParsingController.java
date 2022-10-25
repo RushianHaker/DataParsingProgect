@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * CourseParsingController - реализация интерфейса базовых методов CourseEntityRepository
+ * CourseParsingController
  *
  * @author max
  */
